@@ -44,10 +44,9 @@ router.put('/:id',
   md.checkAccountNameUnique,
   async (req, res, next) => {
     // DO YOUR MAGIC
-    const updated = await Account.updateById(req.params.id, req.body)
-    res.json(updated)
     try { 
-      res.json('update account')
+    const updated = await Account.updateById(req.params.id, req.body) 
+      res.json(updated)
     } catch (err) {
       next(err)
     }
